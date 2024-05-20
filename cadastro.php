@@ -29,13 +29,14 @@
 <?php
 
 if(isset($_POST['nome'], $_POST['email'], $_POST['senha'])){
+    session_start();
     try {
         // Dados do formulário
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
     
-    // Verificar se o email já está cadastrado
+        // Verificar se o email já está cadastrado
         $cadastro = $pdo->prepare("SELECT COUNT(*) FROM clientes WHERE email = :email");
         $cadastro->bindParam(':email', $email);
         $cadastro->execute();
@@ -51,7 +52,7 @@ if(isset($_POST['nome'], $_POST['email'], $_POST['senha'])){
 
         // Executar a declaração
         $cadastro->execute();
-        echo "Cadastro realizado com sucesso!";
+        sleep(5);
         header ('Location: login.php');
     }
     } catch(PDOException $e) {

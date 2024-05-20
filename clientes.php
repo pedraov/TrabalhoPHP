@@ -1,3 +1,9 @@
+<?php
+
+    include ('verificarLogin.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +13,7 @@
 </head>
 <body>
     <h1>Cliente seja Bem vindo</h1>
+    <br>
+    <a href=logout.php>Sair</a>
 </body>
 </html>

@@ -25,10 +25,12 @@
     <br>
 
     <!-- Código php para login do usuário -->
-    <?php
+<?php
+
 if(isset($_POST['email'], $_POST['senha'])){
+    session_start();
     try {
-        // Dados do formulário (supondo que os dados foram enviados via POST)
+        // Dados do formulário
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         // Preparar a declaração SQL
@@ -43,11 +45,9 @@ if(isset($_POST['email'], $_POST['senha'])){
             $row = $login->fetch(PDO::FETCH_ASSOC);
             // Verificar a senha
             if (password_verify($senha, $row['senha'])) {
-                echo "Login realizado com sucesso!";
                 // Inicio da sessão e armazenar informações do usuário
-                session_start();
-                $_SESSION['user_id'] = $row['id'];
-                $_SESSION['user_email'] = $row['email'];
+                $_SESSION['email'] = $row['email'];
+                sleep(5);
                 header ('Location: clientes.php');
             } else {
                 echo "Senha incorreta.";
@@ -61,6 +61,11 @@ if(isset($_POST['email'], $_POST['senha'])){
 } else {
     echo "Por favor, preencha todos os dados.";
 }
+
+    if(isset($_GET['erro'])){
+        $erro = '<br><div style="background-color: red; color: white; padding: 20px; margin: 10px; width: 200px;"=>É necessário ter uma conta para acessar o sistema.</div>';
+    }
+    echo $erro ?? '';
     
     // Fechar a conexão
     $pdo = null;
