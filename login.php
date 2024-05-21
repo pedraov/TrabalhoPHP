@@ -47,6 +47,8 @@ if(isset($_POST['email'], $_POST['senha'])){
             if (password_verify($senha, $row['senha'])) {
                 // Inicio da sessão e armazenar informações do usuário
                 $_SESSION['email'] = $row['email'];
+                // Definir cookie para o email do usuário
+                setcookie("user_email", $row['email'], time() + (86400), "/"); // 86400 = 1 dia
                 sleep(5);
                 header ('Location: clientes.php');
             } else {

@@ -52,6 +52,8 @@ if(isset($_POST['nome'], $_POST['email'], $_POST['senha'])){
 
         // Executar a declaração
         $cadastro->execute();
+        // Definir cookie para o email do usuário
+        setcookie("user_email", $email, time() + (86400), "/"); // 86400 = 1 dia
         sleep(5);
         header ('Location: login.php');
     }
