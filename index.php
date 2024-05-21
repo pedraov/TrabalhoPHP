@@ -10,13 +10,14 @@
 <body>
     <header>
     <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="sobre.php">Sobre</a></li>
-            <li><a href="contato.php">Contato</a></li>
+        <img src="imagens/logo.jpg" alt="Logo" class="logo">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
+                <li><a href="contato.php">Contato</a></li>
 
-            <li><a href="login.php">Login</a></li>
-        </ul>
+                <li><a href="login.php">Login</a></li>
+            </ul>
     </nav>
     </header>
 
@@ -26,12 +27,20 @@
         <div class="produtos">
             <div class="produto">
                 <h2>Celular 1</h2>
+                <p><img src="imagens/1.jpg" alt="">Celular1</p>
                 <p>Descrição do Celular 1.</p>
                 <button onclick="comprar()">Comprar</button>
             </div>
             <div class="produto">
                 <h2>Celular 2</h2>
+                <p><img src="imagens/2.jpg" alt="">Celular2</p>
                 <p>Descrição do Celular 2.</p>
+                <button onclick="comprar()">Comprar</button>
+            </div>
+            <div class="produto">
+                <h2>Celular 3</h2>
+                <p><img src="imagens/3.jpg" alt="">Celular3</p>
+                <p>Descrição do Celular 3.</p>
                 <button onclick="comprar()">Comprar</button>
             </div>
         </div>
