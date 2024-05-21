@@ -14,12 +14,18 @@ if (isset($_POST['adicionar'])) {
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     $descricao = $_POST['descricao'];
-    $stmt = $pdo->prepare("INSERT INTO produtos (nome, preco, descricao) VALUES (:nome, :preco, :descricao)");
-    $stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':preco', $preco);
-    $stmt->bindParam(':descricao', $descricao);
-    $stmt->execute();
-    header('Location: clientes.php');
+    
+    // Verifica se os campos estão preenchidos
+    if (empty($nome) || empty($preco) || empty($descricao)) {
+        echo "Todos os campos são obrigatórios.";
+    } else {
+        $stmt = $pdo->prepare("INSERT INTO produtos (nome, preco, descricao) VALUES (:nome, :preco, :descricao)");
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':preco', $preco);
+        $stmt->bindParam(':descricao', $descricao);
+        $stmt->execute();
+        header('Location: clientes.php');
+    }
 }
 
 // Função para excluir produto
@@ -37,13 +43,19 @@ if (isset($_POST['editar'])) {
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     $descricao = $_POST['descricao'];
-    $stmt = $pdo->prepare("UPDATE produtos SET nome = :nome, preco = :preco, descricao = :descricao WHERE id = :id");
-    $stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':preco', $preco);
-    $stmt->bindParam(':descricao', $descricao);
-    $stmt->bindParam(':id', $id);
-    $stmt->execute();
-    header('Location: clientes.php');
+    
+    // Verifica se os campos estão preenchidos
+    if (empty($nome) || empty($preco) || empty($descricao)) {
+        echo "Todos os campos são obrigatórios.";
+    } else {
+        $stmt = $pdo->prepare("UPDATE produtos SET nome = :nome, preco = :preco, descricao = :descricao WHERE id = :id");
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':preco', $preco);
+        $stmt->bindParam(':descricao', $descricao);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        header('Location: clientes.php');
+    }
 }
 
 $produtos = listarProdutos($pdo);
@@ -64,13 +76,13 @@ $produtos = listarProdutos($pdo);
     <form action="clientes.php" method="post">
         <input type="hidden" name="adicionar" value="1">
         <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
+        <input type="text" id="nome" name="nome"><br><br>
 
         <label for="preco">Preço:</label><br>
-        <input type="number" step="0.01" id="preco" name="preco" required><br><br>
+        <input type="number" step="0.01" id="preco" name="preco"><br><br>
 
         <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" name="descricao" required></textarea><br><br>
+        <textarea id="descricao" name="descricao"></textarea><br><br>
 
         <input type="submit" value="Adicionar">
     </form>
@@ -118,13 +130,13 @@ $produtos = listarProdutos($pdo);
         <input type="hidden" name="editar" value="1">
         <input type="hidden" name="id" value="<?php echo $produto['id']; ?>">
         <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" value="<?php echo $produto['nome']; ?>" required><br><br>
+        <input type="text" id="nome" name="nome" value="<?php echo $produto['nome']; ?>"><br><br>
 
         <label for="preco">Preço:</label><br>
-        <input type="number" step="0.01" id="preco" name="preco" value="<?php echo $produto['preco']; ?>" required><br><br>
+        <input type="number" step="0.01" id="preco" name="preco" value="<?php echo $produto['preco']; ?>"><br><br>
 
         <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" name="descricao" required><?php echo $produto['descricao']; ?></textarea><br><br>
+        <textarea id="descricao" name="descricao"><?php echo $produto['descricao']; ?></textarea><br><br>
 
         <input type="submit" value="Atualizar">
     </form>
