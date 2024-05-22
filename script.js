@@ -1,3 +1,3 @@
 function comprar() {
-    alert("Produto adicionado ao carrinho!");
+    window.location.href = "qrcode.html";
 }

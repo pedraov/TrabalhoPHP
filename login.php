@@ -23,6 +23,7 @@
         <input type="submit" value="Login">
     </form>
     <br>
+    <a href="recuperar_senha.php">Esqueci minha senha</a>
 
     <!-- Código php para login do usuário -->
 <?php
