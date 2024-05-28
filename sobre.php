@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Celulares - Sobre</title>
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="sobre.php">Sobre</a></li>
-            <li><a href="contato.php">Contato</a></li>
-        </ul>
-    </nav>
+    <header class ="header">
+        <a href="#" class = "logo">iHomeCwb</a>
+
+        <nav class="navbar">
+            <a href="index.php">Home</a>
+            <a href="Sobre.php">Sobre</a>
+            <a href="Contato.php">Contato</a>
+        </nav>
     </header>
 
     <main>

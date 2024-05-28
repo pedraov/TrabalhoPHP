@@ -4,36 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Celulares - Contato</title>
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="sobre.php">Sobre</a></li>
-                <li><a href="contato.php">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Contato</h1>
-            <form action="enviar.php" method="post">
-                <p>
-                <input placeholder="Enter text here" class="input-style" type="text">
-                </p>
-                        
-                <p>
-                <input placeholder="Enter text here" class="input-style" type="text">
-                </p>
-                        
-                <p>
-                <input placeholder="Enter text here" class="input-style" type="text">
-                </p>
+<body class="contactBody">
+    /*<header class ="header">
+        <a href="#" class = "logo">iHomeCwb</a>
 
-                <button> Enviar Mensagem</button>
-            </form>
-    </main>
+        <nav class="navbar">
+            <a href="index.php">Home</a>
+            <a href="Sobre.php">Sobre</a>
+            <a href="Contato.php">Contato</a>
+            <form action="enviar.php" method="post">
+
+        </nav>
+    </header>*/
+    
+    <section class="contact">
+        <h2>Nos contate!</h2>
+
+        <form action="enviar.php" method = "post">
+            <div class="input-box">
+                <div class="input-field field">
+                    <input type="text" placeholder="Seu nome" id="name" class="item" autocomplete= "off">
+                </div>
+                <div class="input-field field">
+                    <input type="text" placeholder="Seu email" id="email" class="item" autocomplete= "off">
+                </div>
+
+                <div class="input-box">
+                <div class="input-field field">
+                    <input type="text" placeholder="Numero telefone" id="phone" class="item" autocomplete= "off">
+                </div>
+                <div class="input-field field">
+                    <input type="text" placeholder="Assunto" id="assunto" class="item" autocomplete= "off">
+                </div>
+            </div>
+            <div class="textarea-field field">
+                <textarea name="" id="message" cols="" rows="" placeholder="Digite sua mensagem" class="item" autocomplete="off"> </textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+    </section>
 
     <footer>
         <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
