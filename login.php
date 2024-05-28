@@ -11,16 +11,20 @@
     <title>Login</title>
 </head>
 <body>
-<h2>Login de Cliente</h2>
-    <form action="login.php" method="post">
+<h2>Login Admin</h2>
+    <form action="login.php" method="post" class="form">
 
+      <div class="inputForm">
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+        <input type="email" id="email" name="email" class="input" placeholder="Digite seu email"><br><br>
+      </div>
 
+      <div class="inputForm">      
         <label for="senha">Senha:</label><br>
-        <input type="password" id="senha" name="senha"><br><br>
+        <input type="password" id="senha" name="senha" class="input" placeholder="Digite sua senha"><br><br>
+      </div>
 
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" class="button-submit">
     </form>
     <br>
     <a href="recuperar_senha.php">Esqueci minha senha</a>
