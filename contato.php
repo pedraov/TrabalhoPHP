@@ -18,7 +18,7 @@
 
         </nav>
     </header>*/
-    
+    <main>
     <section class="contact">
         <h2>Nos contate!</h2>
 
@@ -48,7 +48,7 @@
         </form>
 
     </section>
-
+    <main>
     <footer>
         <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
     </footer>

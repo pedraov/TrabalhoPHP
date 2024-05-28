@@ -53,7 +53,7 @@ form .input-box{
 }
 
 .field .item::placeholder{
-    color: rgba(255, 255, 255, .3);
+    color: black
 }
 
 form .textarea-field .item{
@@ -109,6 +109,7 @@ form .textarea-field .item{
 
 
 main {
+    margin: 30px;
     padding: 80px 20px 20px;
     width: 100%;
     max-width: 1200px;
@@ -201,3 +202,67 @@ footer {
         margin-top: 10px;
     }
 }
+
+/* Referente ao gerenciamento de produtos */
+.content {
+    margin: 10;
+    display: flex;
+    gap: 20px;
+}
+
+.form-container, .table-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-container {
+    flex: 1;
+}
+
+.table-container {
+    flex: 2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.button {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #1e7e34;
+    transform: scale(0.95);
+}
+
+/* fim do gerenciamento de produtos */

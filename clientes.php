@@ -2,6 +2,8 @@
 include('verificarLogin.php');
 include_once 'server.php';
 
+$error_message = '';
+
 // Função para listar produtos
 function listarProdutos($pdo) {
     $stmt = $pdo->prepare("SELECT * FROM produtos");
@@ -17,7 +19,7 @@ if (isset($_POST['adicionar'])) {
     
     // Verifica se os campos estão preenchidos
     if (empty($nome) || empty($preco) || empty($descricao)) {
-        echo "Todos os campos são obrigatórios.";
+        $error_message = "Todos os campos são obrigatórios.";
     } else {
         $stmt = $pdo->prepare("INSERT INTO produtos (nome, preco, descricao) VALUES (:nome, :preco, :descricao)");
         $stmt->bindParam(':nome', $nome);
@@ -46,7 +48,7 @@ if (isset($_POST['editar'])) {
     
     // Verifica se os campos estão preenchidos
     if (empty($nome) || empty($preco) || empty($descricao)) {
-        echo "Todos os campos são obrigatórios.";
+        $error_message = "Todos os campos são obrigatórios.";
     } else {
         $stmt = $pdo->prepare("UPDATE produtos SET nome = :nome, preco = :preco, descricao = :descricao WHERE id = :id");
         $stmt->bindParam(':nome', $nome);
@@ -67,10 +69,23 @@ $produtos = listarProdutos($pdo);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Produtos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class ="header">
+        <a href="#" class = "logo">iHomeCwb</a>
+
+        <nav class="navbar">
+            <a href="index.php">Home</a>
+            <a href="Sobre.php">Sobre</a>
+            <a href="Contato.php">Contato</a>
+        </nav>
+    </header>
+    <main>
     <h1>Gerenciamento de Produtos</h1>
     
+    <div class="content">
+        <div class="form-container">
     <!-- Formulário para adicionar produto -->
     <h2>Adicionar Produto</h2>
     <form action="clientes.php" method="post">
@@ -84,11 +99,16 @@ $produtos = listarProdutos($pdo);
         <label for="descricao">Descrição:</label><br>
         <textarea id="descricao" name="descricao"></textarea><br><br>
 
-        <input type="submit" value="Adicionar">
+        <?php if (!empty($error_message)): ?>
+            <p class="error-message"><?php echo $error_message; ?></p>
+        <?php endif; ?>
+
+        <input type="submit" value="Adicionar" class="button">
     </form>
-    <br>
+</div>
 
     <!-- Tabela de produtos -->
+    <div class="table-container">
     <h2>Lista de Produtos</h2>
     <table border="1">
         <thead>
@@ -108,13 +128,15 @@ $produtos = listarProdutos($pdo);
                 <td><?php echo $produto['preco']; ?></td>
                 <td><?php echo $produto['descricao']; ?></td>
                 <td>
-                    <a href="clientes.php?editar=<?php echo $produto['id']; ?>">Editar</a>
-                    <a href="clientes.php?excluir=<?php echo $produto['id']; ?>">Excluir</a>
+                    <a href="clientes.php?editar=<?php echo $produto['id']; ?>" class="button">Editar</a>
+                    <a href="clientes.php?excluir=<?php echo $produto['id']; ?>" class="button">Excluir</a>
                 </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+    </div>
+    </div>
 
     <!-- Formulário para editar produto -->
     <?php
@@ -125,6 +147,7 @@ $produtos = listarProdutos($pdo);
         $stmt->execute();
         $produto = $stmt->fetch(PDO::FETCH_ASSOC);
     ?>
+    <div class="edit-form">
     <h2>Editar Produto</h2>
     <form action="clientes.php" method="post">
         <input type="hidden" name="editar" value="1">
@@ -138,12 +161,20 @@ $produtos = listarProdutos($pdo);
         <label for="descricao">Descrição:</label><br>
         <textarea id="descricao" name="descricao"><?php echo $produto['descricao']; ?></textarea><br><br>
 
-        <input type="submit" value="Atualizar">
+        <?php if (!empty($error_message)): ?>
+            <p class="error-message"><?php echo $error_message; ?></p>
+        <?php endif; ?>
+        <input type="submit" value="Atualizar" class="button">
     </form>
+    </div>
     <?php
     }
     ?>
     <br>
-    <a href="logout.php">Sair</a>
+    <a href="logout.php" class="button">Sair</a>
+    <main>
+    <footer>
+        <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

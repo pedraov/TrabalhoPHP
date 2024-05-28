@@ -23,13 +23,28 @@ if (isset($_GET['email']) && isset($_POST['senha'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redefinir Senha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class ="header">
+        <a href="#" class = "logo">iHomeCwb</a>
+
+        <nav class="navbar">
+            <a href="index.php">Home</a>
+            <a href="Sobre.php">Sobre</a>
+            <a href="Contato.php">Contato</a>
+        </nav>
+    </header>
+    <main>
 <h2>Redefinir Senha</h2>
     <form action="redefinir_senha.php?email=<?php echo urlencode($_GET['email']); ?>" method="post">
         <label for="senha">Nova Senha:</label><br>
         <input type="password" id="senha" name="senha"><br><br>
         <input type="submit" value="Redefinir Senha">
     </form>
+    <main>
+    <footer>
+        <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

@@ -24,13 +24,28 @@ if (isset($_POST['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class ="header">
+        <a href="#" class = "logo">iHomeCwb</a>
+
+        <nav class="navbar">
+            <a href="index.php">Home</a>
+            <a href="Sobre.php">Sobre</a>
+            <a href="Contato.php">Contato</a>
+        </nav>
+    </header>
+    <main>
 <h2>Recuperar Senha</h2>
     <form action="recuperar_senha.php" method="post">
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email"><br><br>
         <input type="submit" value="Enviar">
     </form>
+    <main>
+    <footer>
+        <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
