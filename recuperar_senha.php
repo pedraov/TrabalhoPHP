@@ -38,10 +38,12 @@ if (isset($_POST['email'])) {
     </header>
     <main>
 <h2>Recuperar Senha</h2>
-    <form action="recuperar_senha.php" method="post">
+    <form action="recuperar_senha.php" method="post" class="form">
+     <div class="inputForm">
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-        <input type="submit" value="Enviar">
+        <input type="email" id="email" name="email" class="input"><br><br>
+     </div>
+        <input type="submit" value="Enviar" class="button-submit">
     </form>
     <main>
     <footer>
