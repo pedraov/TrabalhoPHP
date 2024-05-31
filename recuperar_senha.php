@@ -36,7 +36,6 @@ if (isset($_POST['email'])) {
             <a href="Contato.php">Contato</a>
         </nav>
     </header>
-    <main>
 <h2 style="margin-top: 150px">Recuperar Senha</h2>
     <form action="recuperar_senha.php" method="post" class="form">
      <div class="inputForm">
@@ -45,7 +44,6 @@ if (isset($_POST['email'])) {
      </div>
         <input type="submit" value="Enviar" class="button-submit">
     </form>
-    <main>
     <footer>
         <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
     </footer>
