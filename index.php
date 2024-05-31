@@ -21,7 +21,7 @@
 
     <main>
         <h1 style="margin-top: 15px">Bem-vindo à nossa Loja de Celulares</h1>
-        <p style="margin-bottom: 10px>Confira nossas ofertas incríveis de smartphones.</p>
+        <p style="margin-bottom: 10px">Confira nossas ofertas incríveis de smartphones.</p>
         <div class="produtos">
             <div class="produto">
                 <h2>Iphone 15</h2>
