@@ -37,7 +37,7 @@ if (isset($_POST['email'])) {
         </nav>
     </header>
     <main>
-<h2>Recuperar Senha</h2>
+<h2 style="margin-top: 150px">Recuperar Senha</h2>
     <form action="recuperar_senha.php" method="post" class="form">
      <div class="inputForm">
         <label for="email">Email:</label><br>
