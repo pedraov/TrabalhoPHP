@@ -39,6 +39,9 @@
     </form>
     <br>
     <a href="recuperar_senha.php">Esqueci minha senha</a>
+    <footer>
+        <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
+    </footer>
 
     <!-- Código php para login do usuário -->
 <?php
