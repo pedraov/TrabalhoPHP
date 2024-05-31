@@ -18,8 +18,12 @@
     </header>
 
     <main>
-        <h1>Sobre Nós</h1>
-        <p>Somos uma loja dedicada a trazer os melhores celulares para você.</p>
+        <h1 style="text-align: center; margin-bottom: 10px; margin-top: 20px">Sobre nós</h1>
+        <p>Bem-vindo à iHomeCwb, a sua loja online de iPhones, sediada em Curitiba e comprometida em trazer a você a melhor experiência de compra de smartphones da Apple em todo o Brasil. Nossa missão é clara: tornar os iPhones acessíveis para todos. <br><br> Sabemos que a qualidade e a inovação da Apple são incomparáveis, e acreditamos que mais pessoas devem ter a oportunidade de experimentar essa tecnologia de ponta. É por isso que trabalhamos incessantemente para oferecer preços competitivos e condições de pagamento flexíveis, sem comprometer a qualidade do produto ou do serviço.</p><br>
+
+        <p>Fique por dentro das últimas novidades, promoções exclusivas e lançamentos da iHomeCwb seguindo nosso perfil no Instagram. É a melhor maneira de se manter atualizado sobre tudo o que acontece na nossa loja e ainda participar de sorteios e eventos especiais!</p>
+
+        <span><button style="margin-top: 20px"><a href="https://www.instagram.com/ihomecwb?igsh=MThweTFqaDk2NTJieg==">Instagram</a></button></span>
     </main>
 
     <footer>
