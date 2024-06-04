@@ -28,30 +28,28 @@
     <section class="contact">
         <h2>Nos contate!</h2>
 
-        <form action="enviar.php" method = "post">
-            <div class="input-box">
-                <div class="input-field field">
-                    <input type="text" placeholder="Seu nome" id="name" class="item" autocomplete= "off">
-                </div>
-                <div class="input-field field">
-                    <input type="text" placeholder="Seu email" id="email" class="item" autocomplete= "off">
-                </div>
+        <form action="enviar.php" method="post">
+    <div class="input-box">
+        <div class="input-field field">
+            <input type="text" name="nome" placeholder="Seu nome" id="name" class="item" autocomplete="off">
+        </div>
+        <div class="input-field field">
+            <input type="email" name="email" placeholder="Seu email" id="email" class="item" autocomplete="off">
+        </div>
+        <div class="input-field field">
+            <input type="text" name="telefone" placeholder="Numero telefone" id="phone" class="item" autocomplete="off">
+        </div>
+        <div class="input-field field">
+            <input type="text" name="assunto" placeholder="Assunto" id="assunto" class="item" autocomplete="off">
+        </div>
+    </div>
+    <div class="textarea-field field">
+        <textarea name="mensagem" id="message" cols="30" rows="5" placeholder="Digite sua mensagem" class="item" autocomplete="off"></textarea>
+    </div>
+    <button type="submit">Enviar</button>
 
-                <div class="input-box">
-                <div class="input-field field">
-                    <input type="text" placeholder="Numero telefone" id="phone" class="item" autocomplete= "off">
-                </div>
-                <div class="input-field field">
-                    <input type="text" placeholder="Assunto" id="assunto" class="item" autocomplete= "off">
-                </div>
-            </div>
-            <div class="textarea-field field">
-                <textarea name="" id="message" cols="10" rows="5" placeholder="Digite sua mensagem" class="item" autocomplete="off"> </textarea>
-            </div>
+</form>
 
-            <button type="submit">Enviar</button>
-
-        </form>
 
     </section>
 </main>

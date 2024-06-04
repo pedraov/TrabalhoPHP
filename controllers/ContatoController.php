@@ -1,3 +1,12 @@
+
+
+<?php
+require_once 'ContatoController.php';
+
+$controller = new ContatoController();
+$controller->enviarMensagem();
+?>
+
 <?php
 class ContatoController {
     public function enviarMensagem() {
