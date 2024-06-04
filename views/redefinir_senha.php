@@ -1,6 +1,6 @@
 <?php
 // Inclusão da página com o servidor MySQL
-include_once 'server.php';
+include_once '../config/database.php';
 
 if (isset($_GET['email']) && isset($_POST['senha'])) {
     $email = $_GET['email'];
@@ -23,7 +23,7 @@ if (isset($_GET['email']) && isset($_POST['senha'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redefinir Senha</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class ="header">
@@ -31,8 +31,8 @@ if (isset($_GET['email']) && isset($_POST['senha'])) {
 
         <nav class="navbar">
             <a href="index.php">Home</a>
-            <a href="Sobre.php">Sobre</a>
-            <a href="Contato.php">Contato</a>
+            <a href="sobre.php">Sobre</a>
+            <a href="contato.php">Contato</a>
         </nav>
     </header>
     <main>

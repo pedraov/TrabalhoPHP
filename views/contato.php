@@ -1,24 +1,30 @@
+<?php
+//Inclusão da página com o servidor MySQL
+    include_once '../config/database.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Celulares - Contato</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="contactBody">
-    /*<header class ="header">
+    <header class ="header">
         <a href="#" class = "logo">iHomeCwb</a>
 
         <nav class="navbar">
             <a href="index.php">Home</a>
-            <a href="Sobre.php">Sobre</a>
-            <a href="Contato.php">Contato</a>
+            <a href="sobre.php">Sobre</a>
+            <a href="contato.php">Contato</a>
             <form action="enviar.php" method="post">
 
         </nav>
-    </header>*/
-    <main>
+    </header>
+<main>
     <section class="contact">
         <h2>Nos contate!</h2>
 
@@ -40,7 +46,7 @@
                 </div>
             </div>
             <div class="textarea-field field">
-                <textarea name="" id="message" cols="" rows="" placeholder="Digite sua mensagem" class="item" autocomplete="off"> </textarea>
+                <textarea name="" id="message" cols="10" rows="5" placeholder="Digite sua mensagem" class="item" autocomplete="off"> </textarea>
             </div>
 
             <button type="submit">Enviar</button>
@@ -48,19 +54,10 @@
         </form>
 
     </section>
-    <main>
+</main>
+
     <footer>
         <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = htmlspecialchars($_POST['nome']);
-    $email = htmlspecialchars($_POST['email']);
-    $mensagem = htmlspecialchars($_POST['mensagem']);
-    
-    echo "Obrigado pelo seu contato, $nome. Responderemos em breve.";
-}
-?>

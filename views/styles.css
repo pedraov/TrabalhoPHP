@@ -43,21 +43,24 @@ form .input-box{
 .field .item{
     width: 100%;
     padding: 18px;
-    background: transparent;
     border: 2px solid black;
     outline: none;
     border-radius: 6px;
     font-size: 16px;
-    color: #ccc;
+    color: black;
     margin: 12px 0;
 }
 
 .field .item::placeholder{
-    color: black
+    color: black;
 }
 
 form .textarea-field .item{
     resize: none;
+}
+
+form .textarea-field .field{
+    color: black;
 }
 
 

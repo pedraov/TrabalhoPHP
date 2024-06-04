@@ -1,15 +1,15 @@
 <?php
 //Inclusão da página com o servidor MySQL
-    include_once 'server.php';
+    include_once '../config/database.php';
 ?>
-
+0
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class ="header">
@@ -17,9 +17,9 @@
 
     <nav class="navbar">
         <a href="index.php">Home</a>
-        <a href="Sobre.php">Sobre</a>
-        <a href="Contato.php">Contato</a>
-        <a href="Login.php">Login</a>
+        <a href="sobre.php">Sobre</a>
+        <a href="contato.php">Contato</a>
+        <a href="login.php">Login</a>
     </nav>
 </header>
 <h2 style="margin-top: 150px">Login Admin</h2>
@@ -43,8 +43,7 @@
         <p>&copy; 2024 Loja de Celulares. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Código php para login do usuário -->
-<?php
+    <?php
 
 if(isset($_POST['email'], $_POST['senha'])){
     session_start();
@@ -92,5 +91,4 @@ if(isset($_POST['email'], $_POST['senha'])){
     $pdo = null;
 
 ?>
-</body>
-</html>
+<?php
